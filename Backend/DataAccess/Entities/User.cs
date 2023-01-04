@@ -2,7 +2,7 @@
 
 namespace DataAccess.Entities
 {
-    public class User : IdentityUser<int>
+    public class User : IdentityUser<Guid>
     {
         public User() 
         {
