@@ -1,6 +1,4 @@
 ﻿using DataAccess.Entities;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DataContext
 {
-    public class DBContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
+    public class DBContext : DbContext
     {
-        public DBContext(DbContextOptions<DBContext> options)
-        : base(options)
+        public DbSet<User> Users { get; set; }
+        public DBContext(DbContextOptions<DBContext> options): base(options)
         {
+
         }
+
     }
 }
